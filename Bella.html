@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon Bella</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+      color: #fff;
+    }
+
+    header {
+      background: url('BeBarber.png') no-repeat center/cover;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #f9c846;
+      background: rgba(0, 0, 0, 0);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+    }
+
+    /* Circle Images */
+    .circle-images {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .circle-images img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #f9c846;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .circle-images img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Navigation Buttons */
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 1.5rem;
+    }
+
+    .nav-buttons button {
+      background: #111;
+      border: 2px solid #f9c846;
+      padding: 1rem;
+      text-align: center;
+      color: #f9c846;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background: #f9c846;
+      color: #000;
+    }
+
+    /* Sections (Hidden by Default) */
+    .section {
+      display: none;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #f9c846;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Social Links */
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .social a {
+      color: #f9c846;
+      transition: transform 0.3s;
+    }
+
+    .social a:hover {
+      transform: scale(1.2);
+      color: #fff;
+    }
+
+    /* Back Button */
+    .back-btn {
+      margin-top: 2rem;
+      background: #333;
+      border: 2px solid #f9c846;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      color: #f9c846;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #f9c846;
+      color: #000;
+    }
+
+    /* Floating WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 10px;
+      width: 45px;
+      right: 40px;
+      background: #25d366;
+      color: white;
+      font-size: 1.8rem;
+      padding: 3px;
+      border-radius: 50%;
+      box-shadow: 0 4px 11px rgba(0,0,0,0.5);
+      text-align: center;
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      background: #20b358;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Home Page -->
+  <div id="home">
+    <header>
+      <h1>Salon Bella</h1>
+    </header>
+
+    <!-- Circle Images -->
+    <div class="circle-images">
+   
+      <img src="tt-modified.png" alt="Makeup" class="logo">
+  
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button onclick="openSection('about')">About Us</button>
+      <button onclick="openSection('services')">Our Services</button>
+      <button onclick="openSection('contact')">Contact Us</button>
+    </div>
+  </div>
+
+  <!-- Sections -->
+  <div id="about" class="section">
+    <h2>About Us</h2>
+    <p>Salon Bella is your destination for elegance and beauty. Inspired by premium salon styles, we provide professional services for your special moments.</p>
+    <button class="back-btn" onclick="goHome()">⬅ Back</button>
+  </div>
+
+  <div id="services" class="section">
+    <h2>Our Services</h2>
+    <p>💇 Hair Styling | 💄 Makeup | 💅 Nails | 💆 Spa Treatments</p>
+    <button class="back-btn" onclick="goHome()">⬅ Back</button>
+  </div>
+
+  <div id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>📍 No. 123, Main Street, Colombo</p>
+    <p>📞 +94 717388286</p>
+
+    <div class="social">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <button class="back-btn" onclick="goHome()">⬅ Back</button>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/94717388286" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    function openSection(id) {
+      document.getElementById("home").style.display = "none";
+      document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+
+    function goHome() {
+      document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
+      document.getElementById("home").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
